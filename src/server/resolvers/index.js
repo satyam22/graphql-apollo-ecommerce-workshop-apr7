@@ -14,6 +14,12 @@ export default {
   Query: {
     user(_, args, ctx) {
       return getUser();
+    },
+    products(root, args, ctx) {
+      return getProducts();
+    },
+    product(_, args, ctx) {
+      return getProduct(args.id);
     }
   }
 };

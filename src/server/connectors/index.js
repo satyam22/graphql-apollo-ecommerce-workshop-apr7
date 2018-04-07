@@ -23,6 +23,15 @@ export function getUser() {
   return {
     id: 1,
     firstName: "John",
-    lastName: "Doe"
+    lastName: "Doe",
+    phone: "123"
   };
+}
+
+export function getProducts() {
+  return products;
+}
+
+export function getProduct(id) {
+  return products.find(p => p.id === id);
 }
