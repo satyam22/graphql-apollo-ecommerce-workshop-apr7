@@ -3,6 +3,7 @@ export default `
     id: Int!
     firstName: String
     lastName: String
+    fullName: String
   }
 
   type Product {
@@ -12,13 +13,25 @@ export default `
     description: String
   }
 
+  type CartItem {
+    id: Int!
+    product: Product
+  }
+
   type Query {
     user: User
-    products: [Product]
+    products(priceLimit: Int): [Product]
     product(id: Int!): Product
+    cartItems: [CartItem]
   }
+
+  type Mutation {
+    addProduct(name: String, price: Int): Product
+  }
+
 
   schema {
     query: Query
+    mutation : Mutation
   }
 `;

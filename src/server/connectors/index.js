@@ -17,7 +17,7 @@ let products = [
   }
 ];
 
-let cartItems = [];
+let cartItems = [{ id: 1, productId: 2 }];
 
 export function getUser() {
   return {
@@ -28,10 +28,27 @@ export function getUser() {
   };
 }
 
-export function getProducts() {
+export function getProducts(args) {
+  if (args.priceLimit) {
+    return products.filter(p => p.price < args.priceLimit);
+  }
   return products;
 }
 
 export function getProduct(id) {
   return products.find(p => p.id === id);
+}
+
+export function getCartItems() {
+  return cartItems;
+}
+
+export function addProduct(args) {
+  const newProduct = {
+    id: products.length,
+    name: args.name,
+    price: args.price
+  };
+  products.push(newProduct);
+  return newProduct;
 }
