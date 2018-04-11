@@ -1,4 +1,6 @@
-import pubsub from "../pubnub";
+// import pubsub from "../pubnub";
+
+const pubsub = require("../pubnub");
 
 let products = [
   {

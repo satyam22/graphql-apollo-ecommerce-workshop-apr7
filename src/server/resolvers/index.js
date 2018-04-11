@@ -10,10 +10,22 @@ import {
 } from "../connectors";
 import pubsub from "../pubnub";
 
-export default {
-  Query: {
-    user(_, args, ctx) {
-      return getUser();
-    }
-  }
-};
+// const {
+//   getUser,
+//   getProducts,
+//   getProduct,
+//   addProduct,
+//   getCartItems,
+//   getCartItem,
+//   addToCart,
+//   deleteCartItem
+// }=require('../connectors');
+// const pubsub=require('../pubnub');
+
+// export default {
+//   Query: {
+//     user(_, args, ctx) {
+//       return getUser();
+//     }
+//   }
+// };
